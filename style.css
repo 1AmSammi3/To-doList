@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.all{
+    background: white;
+    max-width: 700px;
+    width: 100%;
+    margin: 100px auto;
+    padding: 20px 40px 40px 40px;
+    border: solid 2px #0e0022;
+    box-shadow: 10px 10px 0 #0e0022;
+    border-radius: 40px;
+}
+.head{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 30px;
+    margin: 0 0 20px 0;
+}
+.task{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+input{
+    flex: 1;
+    padding: 15px;
+    font-weight: 18px;
+    font-size: 20px;
+    border: solid 2px #0e0022;
+    border-radius: 20px 0 0 20px;
+}
+.submit{
+    border-radius: 0 20px 20px 0;
+    font-size: 20px;
+    font-width: 40px;
+    background: #0e0022;
+    width: 100px;
+    color: white;
+    border: solid 1px #0e0022;
+    padding: 15px;
+}
+ul{
+    position: relative;
+    margin: 0 0 0 40px;
+}
+li{
+    list-style: "";
+    margin: 20px 0 10px 0;
+    padding: 17px;
+}
+.flex{
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+}
+.content.checked{
+    color: $555;
+    font-style: line-through;
+}
+.discard{
+    color: #555;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    padding: 30px;
+    border-radius: 50%;
+}
+.discard:active{
+    background: #edeef0;
+}
+.checked{
+    width: 30px;
+    height: 30px;
+    border: solid 2px #0e0022;
+    border-radius: 50%;
+}
