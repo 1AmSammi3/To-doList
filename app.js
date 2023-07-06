@@ -24,27 +24,15 @@ function addNew(){
         discard.onclick = remove;
     }
     input.value = "";
-    saveData();
 }
 
 function toggletodo() {
    list = this.parentNode;
    list.classList.toggle("check");
    this.classList.toggle("check");
-   saveData();
 }
 
 function remove(){
    list = this.parentNode;
    listBox.removeChild(list);
-   saveData();
 }
-
-function saveData() {
-   localStorage.setItem("data", listBox.innerHTML);
-}
-
-function showData(){
-   listBox.innerHTML = localStorage.getItem("data");
-}
-showData();
