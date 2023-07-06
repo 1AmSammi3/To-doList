@@ -50,20 +50,19 @@ li{
     list-style: "";
     margin: 20px 0 10px 0;
     padding: 17px;
-}
-.flex{
-  display: flex;
-  height: 20px;
-  margin: 10px 0 0 0;
-  font-size: 25px;
-  gap: 40px;
-  align-items: center;
+    display: flex;
+    height: 20px;
+    margin: 40px 0 0 0;
+    font-size: 25px;
+    gap: 40px;
+    align-items: center;
 }
 .content{
    flex: 1;
 }
-.content:active{
-    color: $555;
+li.check{
+    text-decoration: line-through;
+    color: #888;
 }
 .discard{
     color: #555;

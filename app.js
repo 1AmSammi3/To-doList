@@ -1,52 +1,50 @@
 let input = document.querySelector(".input");
 let listBox = document.querySelector("ul");
 let list, flex, checked, content, discard;
-
+let todoText = input.value;
 function addNew(){
     if(input.value === ""){
         alert("Enter a task");
     }
     else{
         list = document.createElement("li");
-        flex = document.createElement("div");
         checked = document.createElement("span");
         content = document.createElement("span");
         discard = document.createElement("span");
         discard.innerHTML = "\u00d7";
         content.innerHTML = input.value;
-        flex.appendChild(checked);
-        flex.appendChild(content);
-        flex.appendChild(discard);        
-        list.appendChild(flex);
+        list.appendChild(checked);
+        list.appendChild(content);
+        list.appendChild(discard);
         listBox.appendChild(list);
-        flex.setAttribute("class", "flex");
         checked.setAttribute("class", "checked");
         content.setAttribute("class", "content");
         discard.setAttribute("class", "discard");
-        checked.setAttribute("onclick", "check()");
-        discard.setAttribute("onclick", "discarded()");
+        checked.onclick = toggletodo;
+        discard.onclick = remove;
     }
     input.value = "";
+    saveData();
 }
 
-function check() {
-      if(flex) {
-         checked.nextElementSibling.classList.toggle("checked");
-   checked.classList.toggle("check");
-      }
+function toggletodo() {
+   list = this.parentNode;
+   list.classList.toggle("check");
+   this.classList.toggle("check");
+   saveData();
 }
 
-function  discarded(){
-   list.remove();
+function remove(){
+   list = this.parentNode;
+   listBox.removeChild(list);
+   saveData();
 }
 
-//discard.addEventListener("click", discarded);
+function saveData() {
+   localStorage.setItem("data", listBox.innerHTML);
+}
 
-/*flex.addEventListener("click", function e(){
-    if(e.target.tagName === "SPAN"){
-        e.target.classList.toggle("checked");
-    }
-    if(e.target.innerText === "\u00d7"){
-        e.target.parentElement.parentElement.remove();
-    }
-}, false);*/
+function showData(){
+   listBox.innerHTML = localStorage.getItem("data");
+}
+showData();
